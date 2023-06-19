@@ -15,9 +15,9 @@ function multiplyByFive(number, index, array) {
 }
 
 const test = [1, 2, 3, 4, 5];
-console.log(test);
+console.log("Array: ", test);
 myEach(test, multiplyByFive);
-console.log(test);
+console.log("Array after multiplying by five: ", test, "\n");
 
 //The map() method is a copying method so it does not alter the original array but create a new array.
 function myMap(array, callback) {
@@ -33,9 +33,9 @@ function multiplyByTwo(number, index, array) {
 }
 
 const mapTest = [1, 2, 3, 4, 5];
-console.log(mapTest);
-console.log(myMap(mapTest, multiplyByTwo));
-console.log(mapTest);
+console.log("Original Array: ", mapTest);
+console.log("Array after multiplying by two: ", myMap(mapTest, multiplyByTwo));
+console.log("Original Array after map function: ", mapTest, "\n");
 
 //The filter() method returns a shallow copy of the array.
 
@@ -71,9 +71,9 @@ function containLetters(word, index, array) {
 }
 
 const filterTest = ["apple", "banana", "cherry", "grapes"];
-console.log(filterTest);
+console.log("Array: ", filterTest);
 myFilter(filterTest, containLetters);
-console.log(filterTest);
+console.log("Words containing the letters an: ", filterTest, "\n");
 
 //The some() method returns true if at least one element in the array satisfies the callback function.
 
@@ -95,8 +95,12 @@ function multipleOfFive(number, index, array) {
 }
 
 const someTest = [1, 2, 56, 4, 3, 45, 83, 29];
-console.log(someTest);
-console.log(mySome(someTest, multipleOfFive));
+console.log("Array: ", someTest);
+console.log(
+  "Does the array contain a number that is a multiple of five: ",
+  mySome(someTest, multipleOfFive),
+  "\n"
+);
 
 //The every() method returns true if every element in the array satisfies the callback function.
 
@@ -118,8 +122,12 @@ function multipleOfThree(number, index, array) {
 }
 
 const everyTest = [4, 5, 6, 7, 8, 9, 10];
-console.log(everyTest);
-console.log(myEvery(everyTest, multipleOfThree));
+console.log("Array: ", everyTest);
+console.log(
+  "Does the array contain only numbers that are a multiple of three: ",
+  myEvery(everyTest, multipleOfThree),
+  "\n"
+);
 
 //The reduce() method returns the result of the callback function on every element in the array in one result.
 
@@ -137,8 +145,12 @@ function sumReducer(accumulator, currentValue, index, array) {
 }
 
 const reduceTest = [15, 16, 17, 18, 19];
-console.log(reduceTest);
-console.log(myReduce(reduceTest, sumReducer));
+console.log("Array: ", reduceTest);
+console.log(
+  "Array after sum reducer: ",
+  myReduce(reduceTest, sumReducer),
+  "\n"
+);
 
 //The includes() method returns true if the array contains the specified element.
 
@@ -160,8 +172,12 @@ function containsPumpkin(word, index, array) {
 }
 
 const includesTest = ["apple", "banana", "cherry", "grapes", "cat", "pumpkin"];
-console.log(includesTest);
-console.log(myIncludes(includesTest, containsPumpkin));
+console.log("Array: ", includesTest);
+console.log(
+  "Does the array contain the word pumpkin: ",
+  myIncludes(includesTest, containsPumpkin),
+  "\n"
+);
 
 //The indexOf() method returns the index of the first occurrence of the specified element in the array otherwise returns -1.
 
@@ -192,8 +208,10 @@ const indexOfTest = [
   "pumpkin",
 ];
 
-console.log(indexOfTest);
-console.log(`Found at index ${myIndexOf(indexOfTest, theWord)}`);
+console.log("Array: ", indexOfTest);
+console.log(
+  `The word benchpress is found at index ${myIndexOf(indexOfTest, theWord)}`
+);
 
 //The push() method adds the specified element to the end of the array.
 
@@ -202,11 +220,11 @@ function myPush(array, element) {
 }
 
 const pushTest = [1, 2, 3, 4, 5];
-console.log(pushTest);
+console.log("Array: ", pushTest);
 myPush(pushTest, 6);
-console.log(pushTest);
+console.log("Array after pushing 6 to the end: ", pushTest, "\n");
 
-//The lastIndexOf() method returns the index of the last occurrence of the specified element in the array otherwise returns
+//The lastIndexOf() method returns the index of the last occurrence of the specified element in the array otherwise returns -1
 
 function myLastIndexOf(array, element) {
   let lastOccurence = -1;
@@ -228,8 +246,16 @@ const lastIndexOfTest = [
   "cherry",
   "banana",
 ];
-console.log(myLastIndexOf(lastIndexOfTest, "apple"));
-console.log(myLastIndexOf(lastIndexOfTest, "gorilla"));
+
+console.log("Array: ", lastIndexOfTest);
+console.log(
+  "The last occurence of apple: ",
+  myLastIndexOf(lastIndexOfTest, "apple")
+);
+console.log(
+  "The last occurence of gorilla: ",
+  myLastIndexOf(lastIndexOfTest, "gorilla")
+);
 
 //The objects.keys() method is a method that will take in an object and return an array of the keys of the key:value pairs of that object.
 
@@ -248,7 +274,8 @@ const grabKeysTest = {
   c: 3,
 };
 
-console.log(grabKeys(grabKeysTest));
+console.log("Custom Object: ", grabKeysTest);
+console.log("Keys: ", grabKeys(grabKeysTest), "\n");
 
 //The objects.values() method is a method that will take in an object and return an array of the values of the key:value pairs of that object.
 
@@ -267,7 +294,8 @@ const grabValuesTest = {
   c: 3,
 };
 
-console.log(grabValues(grabValuesTest));
+console.log("Custom Object: ", grabValuesTest);
+console.log("Values: ", grabValues(grabValuesTest));
 
 //Just in case, create a new object class with keys and values with static methods of grabKeys and grabValues.
 
@@ -298,6 +326,7 @@ let bathroom = new roomPlans("Bathroom", "tiles");
 
 bathroom.grabKeysInstance();
 bathroom.grabValuesInstance();
+console.log();
 
 //Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
@@ -315,9 +344,9 @@ function moveZeros(nums) {
 }
 
 let moveZerosTest = [0, 1, 0, 3, 12];
-console.log(moveZerosTest);
+console.log("Array: ", moveZerosTest);
 moveZeros(moveZerosTest);
-console.log(moveZerosTest);
+console.log("Array after moving zeros to the end: ", moveZerosTest, "\n");
 
 //The Sum of a range
 //Create a range function that takes two arguments, start and end, and returns an array containing all the numbers from start up to and including end.
@@ -340,9 +369,9 @@ function myRange(start, end, steps) {
   return result;
 }
 
-console.log(myRange(1, 10));
-console.log(myRange(1, 10, 2));
-console.log(myRange(5, 2, -1));
+console.log("An array from 1 to 10: ", myRange(1, 10));
+console.log("An array from 1 to 10 with 2 steps: ", myRange(1, 10, 2));
+console.log("An array from 5 to 2 with -1 steps: ", myRange(5, 2, -1), "\n");
 
 //Create a sum function that takes an array of numbers and returns the sum of these numbers.
 
@@ -354,7 +383,11 @@ function mySum(array) {
   return sum;
 }
 
-console.log(mySum(myRange(1, 10)));
+console.log(
+  "Sum of an array with a range of 1 to 10: ",
+  mySum(myRange(1, 10)),
+  "\n"
+);
 
 //Reversing an array
 
@@ -382,8 +415,9 @@ function myReverseInPlace(array) {
 console.log(myReverse([1, 2, 3, 4, 5]));
 
 let inPlace = ["JavaScript", "Learning", "Am", "I"];
+console.log("Array: ", inPlace);
 myReverseInPlace(inPlace);
-console.log(inPlace);
+console.log("Array after reversing: ", inPlace, "\n");
 
 //Create a function called arrayToList that builds up a list structure from an array.
 
@@ -402,7 +436,11 @@ function arrayToList(array) {
   return list;
 }
 
-console.log(arrayToList([10, 20, 30]));
+console.log(
+  "Array containing 10, 20, 30 to a List: ",
+  arrayToList([10, 20, 30]),
+  "\n"
+);
 
 //Create a function called listToArray that produces an array from a list.
 
@@ -415,7 +453,11 @@ function listToArray(list) {
   return arr;
 }
 
-console.log(listToArray(arrayToList([10, 20, 30])));
+console.log(
+  "List containing 10, 20, 30 to an Array: ",
+  listToArray(arrayToList([10, 20, 30])),
+  "\n"
+);
 
 //Create a prepend function that takes a list and creates a new list that adds the element to the front of the list.
 
@@ -428,7 +470,11 @@ function prepend(list, element) {
   return list;
 }
 
-console.log(prepend(prepend(null, 20), 10));
+console.log(
+  "Prepend to a list with only 1 object containing value of 20: ",
+  prepend(prepend(null, 20), 10),
+  "\n"
+);
 
 //Create a function where it takes a list and a number and returns the element at the given position in the list with zero referring to the first element in the list.
 
@@ -445,7 +491,11 @@ function myNth(list, position) {
   return current.value;
 }
 
-console.log(myNth(arrayToList([10, 20, 30]), 1));
+console.log(
+  "Element at 2nd position: ",
+  myNth(arrayToList([10, 20, 30]), 1),
+  "\n"
+);
 
 function recursiveMyNth(list, position) {
   if (position < 0 || position > list.length) {
@@ -457,7 +507,11 @@ function recursiveMyNth(list, position) {
   return recursiveMyNth(list.next, position - 1);
 }
 
-console.log(recursiveMyNth(arrayToList([10, 20, 30]), 1));
+console.log(
+  "Element at 2nd position: ",
+  recursiveMyNth(arrayToList([10, 20, 30]), 1),
+  "\n"
+);
 
 //Create a function that takes two values and returns true only if they are the same values
 //or are objects with the same properties where the values of the properties are equal when compared with a recursive
@@ -490,23 +544,35 @@ function myDeepEquals(a, b) {
   }
 }
 
-console.log(myDeepEquals(1, 1));
+console.log("Comparing 1 to 1: ", myDeepEquals(1, 1));
 let obj = { here: { is: "an" }, object: 2 };
-console.log(myDeepEquals(obj, obj));
-console.log(myDeepEquals(obj, { here: 1, object: 2 }));
+console.log("Custom Object: ", obj);
+console.log("Comparing the object to itself: ", myDeepEquals(obj, obj));
+console.log(
+  "Comparing the object to a different object: ",
+  myDeepEquals(obj, { here: 1, object: 2 })
+);
 
 console.log(
+  "The amount of properties in each object: ",
   `${Object.keys(obj).length} : ${
     Object.keys({ here: { is: "an" }, object: { what: "is" }, this: 0 }).length
   }`
 );
+
 console.log(
+  "Result after comparing amount of properties in each object: ",
   myDeepEquals(obj, { here: { is: "an" }, object: { what: "is" }, this: 0 })
 );
 
 console.log(
+  "The amount of properties in each object: ",
   `${Object.keys(obj).length} : ${
     Object.keys({ here: { is: "an" }, object: 2 }).length
   }`
 );
-console.log(myDeepEquals(obj, { here: { is: "an" }, object: 2 }));
+console.log(
+  "Result after comparing amount of properties in each object: ",
+  myDeepEquals(obj, { here: { is: "an" }, object: 2 }),
+  "\n"
+);

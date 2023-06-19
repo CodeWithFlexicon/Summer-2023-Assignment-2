@@ -392,7 +392,7 @@ function checkMyPush() {
 //==================================================================================
 
 function checkMyLastIndexOf() {
-  //The lastIndexOf() method returns the index of the last occurrence of the specified element in the array otherwise returns
+  //The lastIndexOf() method returns the index of the last occurrence of the specified element in the array otherwise returns -1
 
   function myLastIndexOf(array, element) {
     let lastOccurence = -1;
